@@ -276,8 +276,28 @@
 <body>
     <!-- Top Banner -->
     <div class="top-banner">
-        FLASH SALE! 25% OFF. USE CODE: FSCB25
+        FLASH SALE! 10% OFF. USE CODE: FSCB25
     </div>
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgL000006nBdC',
+				'github',
+				'https://orgfarm-cc5e633efc-dev-ed.develop.my.site.com/ESWgithub1760432480023',
+				{
+					scrt2URL: 'https://orgfarm-cc5e633efc-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-cc5e633efc-dev-ed.develop.my.site.com/ESWgithub1760432480023/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 
     <!-- Navigation -->
     <div class="nav-container">
