@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Switch to Solar - SolarSquare</title>
+    <title>Luminous - Power & Solar Solutions</title>
     <style>
         * {
             margin: 0;
@@ -12,267 +12,354 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Arial', sans-serif;
+            color: #333;
         }
 
-        /* Header Styles */
-        header {
-            background: white;
-            padding: 15px 50px;
+        /* Top Banner */
+        .top-banner {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-banner-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0033cc;
-        }
-
-        .anniversary {
-            background: #0033cc;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #0033cc;
-        }
-
-        .signup-btn {
-            background: #0033cc;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .signup-btn:hover {
-            background: #0028a3;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #001a66 0%, #0033cc 100%);
-            padding: 80px 50px;
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-content {
-            flex: 1;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 .highlight {
-            color: #00d4ff;
-        }
-
-        .hero p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .hero-image {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        /* Form Section */
-        .form-container {
-            flex: 1;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            max-width: 450px;
-        }
-
-        .form-container h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .form-container .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .form-group label .required {
-            color: #ff0000;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #0033cc;
-        }
-
-        .bill-options {
-            display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 15px;
         }
 
-        .bill-btn {
-            padding: 10px 20px;
-            border: 2px solid #ddd;
-            background: white;
-            border-radius: 25px;
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.3s;
         }
 
-        .bill-btn:hover {
-            border-color: #0033cc;
-            color: #0033cc;
+        .cta-button:hover {
+            background: white;
+            color: #1e3a8a;
         }
 
-        .bill-btn.active {
-            background: #0033cc;
-            color: white;
-            border-color: #0033cc;
+        /* Main Header */
+        .main-header {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .checkbox-group {
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
-            align-items: start;
-            gap: 10px;
-            margin-bottom: 25px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .checkbox-group input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1e3a8a;
+            text-transform: uppercase;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #ff6b35;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-box {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            width: 200px;
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            font-size: 20px;
             cursor: pointer;
-            margin-top: 2px;
+            color: #333;
         }
 
-        .checkbox-group label {
+        /* Secondary Nav */
+        .secondary-nav {
+            background: white;
+            border-top: 1px solid #eee;
+            padding: 12px 0;
+        }
+
+        .secondary-nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+
+        .secondary-nav a {
+            text-decoration: none;
+            color: #333;
             font-size: 14px;
-            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .checkbox-group a {
-            color: #0033cc;
-            text-decoration: underline;
+        .secondary-nav a:hover {
+            color: #ff6b35;
         }
 
-        .submit-btn {
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .hero-slide {
+            position: absolute;
             width: 100%;
-            padding: 15px;
-            background: #0033cc;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,200,150,0.3), rgba(150,200,255,0.3)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23c8d5a8" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .hero-text .highlight {
+            color: #ff6b35;
+            font-style: italic;
+        }
+
+        .hero-button {
+            background: #ff6b35;
             color: white;
             border: none;
-            border-radius: 8px;
+            padding: 15px 40px;
             font-size: 18px;
-            font-weight: 600;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
         }
 
-        .submit-btn:hover {
-            background: #0028a3;
+        .hero-button:hover {
+            background: #ff8555;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,53,0.4);
         }
 
+        .hero-image {
+            position: relative;
+        }
+
+        .product-showcase {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .camping-scene {
+            position: absolute;
+            right: -100px;
+            top: 50px;
+            width: 500px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .nav-arrow:hover {
+            background: rgba(0,0,0,0.7);
+        }
+
+        .nav-arrow.left {
+            left: 20px;
+        }
+
+        .nav-arrow.right {
+            right: 20px;
+        }
+
+        /* Slide Indicators */
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: #1e3a8a;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .chat-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.6);
+        }
+
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero {
+            .hero-content {
                 flex-direction: column;
+                text-align: center;
+                padding: 40px;
             }
 
-            .form-container {
-                max-width: 100%;
+            .camping-scene {
+                display: none;
+            }
+
+            .main-nav {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
             }
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
+            .top-banner-content {
+                flex-direction: column;
+                text-align: center;
             }
 
-            nav {
-                display: none;
+            .search-box {
+                width: 150px;
             }
 
-            .hero {
-                padding: 40px 20px;
+            .hero-text h1 {
+                font-size: 28px;
             }
 
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .form-container {
-                padding: 30px 20px;
+            .secondary-nav-content {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+
     <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -293,120 +380,121 @@
 </script>
 <script type='text/javascript' src='https://orgfarm-cc5e633efc-dev-ed.develop.my.site.com/ESWgithub1760432480023/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-
-    <!-- Navigation -->
-    <header>
-        <div class="logo">
-            <div style="display: flex; align-items: center;">
-                <span class="anniversary">10</span>
-                <span style="margin-left: 5px; font-size: 12px; color: #666;">Years of</span>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="top-banner-content">
+            <div class="banner-item">
+                Use <strong>WELCOME250</strong> To Get Flat ₹250 Off On Your 1st Order!
             </div>
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <span class="logo-text">solar</span>
-                <div style="width: 30px; height: 30px; background: linear-gradient(135deg, #00d4ff, #0088ff); border-radius: 4px;"></div>
-                <span class="logo-text" style="color: #333;">square</span>
+            <div class="banner-item">
+                📞 Energy Solutions: <strong>9890299902</strong>
+            </div>
+            <div class="banner-item">
+                ✉️ energysolution@luminousindia.com
+            </div>
+            <button class="cta-button">Become an ECOM Distributor</button>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">LUMINOUS</div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#power">Power Solution ▾</a></li>
+                    <li><a href="#solar">Solar Solutions ▾</a></li>
+                    <li><a href="#mobility">Mobility Solution ▾</a></li>
+                    <li><a href="#shop">E-Shop</a></li>
+                    <li><a href="#locator">Store Locator</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <input type="text" class="search-box" placeholder="Search for a product">
+                <button class="icon-button">👤</button>
+                <button class="icon-button">🛒</button>
             </div>
         </div>
-        <nav>
-            <a href="#offerings">Our Offerings ▾</a>
-            <a href="#solutions">Solar Solutions ▾</a>
-            <a href="#presence">Our Presence ▾</a>
-            <a href="#blog">Blog</a>
-            <a href="#more">More ▾</a>
-            <a href="#signup" class="signup-btn">Sign up for free electricity →</a>
-        </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>
-                <span class="highlight">Switch to solar</span> in Gautam Buddha Nagar,<br>
-                at Zero Investment!
-            </h1>
-            <p>Government subsidy covers your down payment, and monthly solar savings cover your EMIs.</p>
-            <div class="hero-image">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%234a90e2' width='600' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='white' text-anchor='middle' dy='.3em'%3ESolar Installation Team%3C/text%3E%3C/svg%3E" alt="Solar Installation Team">
+    <!-- Secondary Navigation -->
+    <nav class="secondary-nav">
+        <div class="secondary-nav-content">
+            <a href="#about">About Us</a>
+            <a href="#global">Global Presence</a>
+            <a href="#business">Business Enquiry</a>
+            <a href="#support">Support</a>
+            <a href="#catalogue">Catalogue</a>
+            <a href="#careers">Careers</a>
+            <a href="#partner">Become A Partner</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <button class="nav-arrow left">‹</button>
+        <button class="nav-arrow right">›</button>
+        
+        <div class="hero-slide">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        From Sunrise to Starlight,<br>
+                        Explore <span class="highlight">on-the-GO</span>
+                    </h1>
+                    <button class="hero-button">Find Your Edge</button>
+                </div>
+                <div class="hero-image">
+                    <div class="product-showcase"></div>
+                    <div class="camping-scene"></div>
+                </div>
             </div>
         </div>
 
-        <div class="form-container">
-            <h2>Book a FREE Solar Consultation</h2>
-            <p class="subtitle">And save up to ₹78,000 with subsidy</p>
-            
-            <form id="consultationForm">
-                <div class="form-group">
-                    <label>Full name <span class="required">*</span></label>
-                    <input type="text" name="fullname" required>
-                </div>
-
-                <div class="form-group">
-                    <label>WhatsApp number <span class="required">*</span></label>
-                    <input type="tel" name="phone" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Pin code <span class="required">*</span></label>
-                    <input type="text" name="pincode" required>
-                </div>
-
-                <div class="form-group">
-                    <label>What is your average monthly bill? <span class="required">*</span></label>
-                    <div class="bill-options">
-                        <button type="button" class="bill-btn" data-value="<1500">Less than ₹1500</button>
-                        <button type="button" class="bill-btn" data-value="1500-2500">₹1500 - ₹2500</button>
-                        <button type="button" class="bill-btn" data-value="2500-4000">₹2500 - ₹4000</button>
-                        <button type="button" class="bill-btn" data-value="4000-8000">₹4000 - ₹8000</button>
-                        <button type="button" class="bill-btn" data-value=">8000">More than ₹8000</button>
-                    </div>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terms" required>
-                    <label for="terms">
-                        I agree to SolarSquare's <a href="#terms">terms of service</a> & <a href="#privacy">privacy policy</a>
-                    </label>
-                </div>
-
-                <button type="submit" class="submit-btn">Get a FREE Quote</button>
-            </form>
+        <div class="slide-indicators">
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
         </div>
     </section>
 
-    <script>
-        // Bill option selection
-        const billBtns = document.querySelectorAll('.bill-btn');
-        let selectedBill = '';
+ 
 
-        billBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                billBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                selectedBill = this.dataset.value;
+    <script>
+        // Simple carousel functionality
+        const slides = document.querySelectorAll('.hero-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        document.querySelector('.nav-arrow.right').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % indicators.length;
+            updateSlide();
+        });
+
+        document.querySelector('.nav-arrow.left').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + indicators.length) % indicators.length;
+            updateSlide();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlide();
             });
         });
 
-        // Form submission
-        document.getElementById('consultationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!selectedBill) {
-                alert('Please select your average monthly bill');
-                return;
-            }
+        function updateSlide() {
+            indicators.forEach((ind, idx) => {
+                ind.classList.toggle('active', idx === currentSlide);
+            });
+        }
 
-            const formData = {
-                fullname: this.fullname.value,
-                phone: this.phone.value,
-                pincode: this.pincode.value,
-                monthlyBill: selectedBill
-            };
-
-            console.log('Form submitted:', formData);
-            alert('Thank you! We will contact you shortly for your FREE solar consultation.');
-            this.reset();
-            billBtns.forEach(b => b.classList.remove('active'));
-            selectedBill = '';
-        });
+        // Auto-play carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % indicators.length;
+            updateSlide();
+        }, 5000);
     </script>
 </body>
 </html>
