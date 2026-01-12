@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoxima University - Your Future Starts Here</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8eef5 0%, #f5f7fa 50%, #e3e8ef 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo {
+            font-size: 3em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #1a365d, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            color: #475569;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .menu-button {
+            background: #1a365d;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            width: 100%;
+            transform: scale(1);
+        }
+
+        .menu-button:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .menu-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .menu-button:hover:before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .menu-button:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 0 3px 10px rgba(37, 99, 235, 0.4);
+        }
+
+        .special-button {
+            background: #1a365d;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+        }
+
+        .special-button:hover {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        /* Sequential zoom animation - one after another */
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+                background: #1a365d;
+            }
+            25% {
+                transform: scale(1.08);
+                box-shadow: 0 8px 30px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5);
+                background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            }
+            50% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+                background: #1a365d;
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+                background: #1a365d;
+            }
+        }
+
+        .menu-button:nth-child(1) {
+            animation: zoomInOut 8s ease-in-out 0s infinite;
+        }
+
+        .menu-button:nth-child(2) {
+            animation: zoomInOut 8s ease-in-out 2s infinite;
+        }
+
+        .menu-button:nth-child(3) {
+            animation: zoomInOut 8s ease-in-out 4s infinite;
+        }
+
+        .menu-button:nth-child(4) {
+            animation: zoomInOut 8s ease-in-out 6s infinite;
+        }
+
+        .ai-section {
+            text-align: center;
+            background: linear-gradient(135deg, #1a365d, #1e3a8a);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(30, 64, 175, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .ai-section h2 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .ai-section p {
+            color: #dbeafe;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .ai-button {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .ai-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.6);
+            font-weight: 900;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+        }
+
+        .ai-button:active {
+            transform: scale(1.02) translateY(-1px);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .menu-button {
+                padding: 15px 25px;
+                font-size: 1em;
+            }
+
+            .ai-section h2 {
+                font-size: 1.5em;
+            }
+
+            .ai-button {
+                padding: 18px 40px;
+                font-size: 1.1em;
+            }
+
+            .ai-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2em;
+            }
+
+            .menu-button {
+                font-size: 0.95em;
+                padding: 14px 20px;
+            }
+
+            .ai-button {
+                font-size: 1em;
+                padding: 16px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="logo">ZOXIMA UNIVERSITY</h1>
+            <p class="tagline">Empowering Dreams, Building Futures</p>
+        </div>
+
+        <div class="menu-container">
+            <a href="https://www.youtube.com" class="menu-button special-button" target="_blank">
+                📱 24×7 Free Counselling on WhatsApp
+            </a>
+            <a href="https://www.youtube.com" class="menu-button" target="_blank">
+                🌐 Visit Website
+            </a>
+            <a href="https://www.youtube.com" class="menu-button" target="_blank">
+                📝 Fill Out Form
+            </a>
+            <a href="https://www.youtube.com" class="menu-button" target="_blank">
+                💬 Contact Us
+            </a>
+        </div>
+
+        <div class="ai-section">
+            <h2>✨ Need Instant Guidance? ✨</h2>
+            <p>
+                Our AI Counsellor is here to help you 24/7!
+            </p>
+            <a href="https://www.youtube.com" class="ai-button" target="_blank">
+                🤖 Chat with AI Counsellor Now
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Click sound effect
+        const buttons = document.querySelectorAll('.menu-button, .ai-button');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create audio context for click sound
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+                
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.6);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+        
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
